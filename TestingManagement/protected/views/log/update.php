@@ -4,18 +4,18 @@
 
 $this->breadcrumbs=array(
 	'Logs'=>array('index'),
-	$model->ID=>array('view','id'=>$model->ID),
+	$model->No=>array('view','id'=>$model->No),
 	'Update',
 );
 
 $this->menu=array(
 	array('label'=>'List Log', 'url'=>array('index')),
 	array('label'=>'Create Log', 'url'=>array('create')),
-	array('label'=>'View Log', 'url'=>array('view', 'id'=>$model->ID)),
+	array('label'=>'View Log', 'url'=>array('view', 'id'=>$model->No)),
 	array('label'=>'Manage Log', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update Log <?php echo $model->ID; ?></h1>
+<h1>Update Log <?php echo $model->No; ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

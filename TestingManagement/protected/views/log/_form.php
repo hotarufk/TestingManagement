@@ -21,13 +21,43 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'ID'); ?>
-		<?php echo $form->textField($model,'ID'); ?>
-		<?php echo $form->error($model,'ID'); ?>
+		<?php echo $form->textField($model,'ID'); ?> <!--ini harus di isi dengan No dari model data, foreign key --> 
+	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'Stream'); ?>
+		<?php echo $form->textField($model,'Stream',array('rows'=>6, 'cols'=>50)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'Scenario'); ?>
+		<?php echo $form->textField($model,'Scenario',array('rows'=>6, 'cols'=>50)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'TestCase'); ?>
+		<?php echo $form->textField($model,'TestCase',array('rows'=>6, 'cols'=>50)); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'TanggalTest'); ?>
-		<?php echo $form->textField($model,'TanggalTest'); ?>
+		<?php	
+			$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+					'model' => $model,
+					'attribute' => 'TanggalTest',
+					'options' => array(  
+						'dateFormat'=>'yy-mm-dd',
+						//'minDate'=>0,
+						'changeYear' => true,           // can change year
+						'changeMonth' => true,
+
+					),
+					'htmlOptions' => array(
+						'size' => '10',
+						'maxlength' => '10',
+					),
+				)); 
+		?>		
 		<?php echo $form->error($model,'TanggalTest'); ?>
 	</div>
 

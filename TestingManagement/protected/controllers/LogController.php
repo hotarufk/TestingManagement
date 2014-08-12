@@ -2,12 +2,16 @@
 
 class LogController extends Controller
 {
+	
+
+
+
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	public $layout='//layouts/column2';
-
+	public $modelData;
 	/**
 	 * @return array action filters
 	 */
@@ -60,10 +64,25 @@ class LogController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate()
+	public function actionCreate($id)
 	{
-		$model=new Log;
+		
+		$modelData=Data::model()->findByPk($id);
+		if($modelData===null)
+			throw new CHttpException(404,'The requested page does not exist.');		
+		
+		///buat log setelah pastikan id yg di input ada
+		$message;
 
+		$model=new Log;
+		$data = array(
+			"ID" => $id,
+			"Stream"=>$modelData->Stream,
+			"Scenario"=>$modelData->Scenario,
+			"TestCase"=>$modelData->TestCase,
+		);
+		$model->setAttributes($data,false);
+		
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -71,11 +90,12 @@ class LogController extends Controller
 		{
 			$model->attributes=$_POST['Log'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->ID));
+				$this->redirect(array('view','id'=>$model->No));
 		}
 
 		$this->render('create',array(
 			'model'=>$model,
+			'modelData'=>$modelData,
 		));
 	}
 
@@ -95,7 +115,7 @@ class LogController extends Controller
 		{
 			$model->attributes=$_POST['Log'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->ID));
+				$this->redirect(array('view','id'=>$model->No));
 		}
 
 		$this->render('update',array(

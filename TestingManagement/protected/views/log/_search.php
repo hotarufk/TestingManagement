@@ -12,6 +12,11 @@
 )); ?>
 
 	<div class="row">
+		<?php echo $form->label($model,'No'); ?>
+		<?php echo $form->textField($model,'No'); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->label($model,'ID'); ?>
 		<?php echo $form->textField($model,'ID'); ?>
 	</div>

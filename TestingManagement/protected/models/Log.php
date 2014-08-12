@@ -4,6 +4,7 @@
  * This is the model class for table "log".
  *
  * The followings are the available columns in table 'log':
+ * @property integer $No
  * @property integer $ID
  * @property string $TanggalTest
  * @property string $Keterangan
@@ -16,6 +17,13 @@ class Log extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
+	 
+	 //kamus Lokal
+	 
+	 public $Stream;
+	 public $Scenario;
+	 public $TestCase;
+	 
 	public function tableName()
 	{
 		return 'log';
@@ -33,7 +41,7 @@ class Log extends CActiveRecord
 			array('ID', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('ID, TanggalTest, Keterangan', 'safe', 'on'=>'search'),
+			array('No, ID, TanggalTest, Keterangan', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -55,6 +63,7 @@ class Log extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
+			'No' => 'No',
 			'ID' => 'ID',
 			'TanggalTest' => 'Tanggal Test',
 			'Keterangan' => 'Keterangan',
@@ -79,6 +88,7 @@ class Log extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
+		$criteria->compare('No',$this->No);
 		$criteria->compare('ID',$this->ID);
 		$criteria->compare('TanggalTest',$this->TanggalTest,true);
 		$criteria->compare('Keterangan',$this->Keterangan,true);

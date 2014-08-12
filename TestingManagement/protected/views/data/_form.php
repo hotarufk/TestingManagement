@@ -21,7 +21,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'ID'); ?>
-		<?php echo $form->textField($model,'ID'); ?>
+		<?php echo $form->numberField($model,'ID'); ?>
 		<?php echo $form->error($model,'ID'); ?>
 	</div>
 
@@ -57,25 +57,57 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Cycle'); ?>
-		<?php echo $form->textField($model,'Cycle'); ?>
+		<?php echo $form->numberField($model,'Cycle'); ?>
 		<?php echo $form->error($model,'Cycle'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'PlannedStartDate'); ?>
-		<?php echo $form->textField($model,'PlannedStartDate'); ?>
+		<?php	
+			$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+					'model' => $model,
+					'attribute' => 'PlannedStartDate',
+					'options' => array(  
+						'dateFormat'=>'yy-mm-dd',
+						//'minDate'=>0,
+						'changeYear' => true,           // can change year
+						'changeMonth' => true,
+
+					),
+					'htmlOptions' => array(
+						'size' => '10',
+						'maxlength' => '10',
+					),
+				)); 
+		?>
 		<?php echo $form->error($model,'PlannedStartDate'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'PlannedEndDate'); ?>
-		<?php echo $form->textField($model,'PlannedEndDate'); ?>
+		<?php	
+			$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+					'model' => $model,
+					'attribute' => 'PlannedEndDate',
+					'options' => array(  
+						'dateFormat'=>'yy-mm-dd',
+						//'minDate'=>0,
+						'changeYear' => true,           // can change year
+						'changeMonth' => true,
+
+					),
+					'htmlOptions' => array(
+						'size' => '10',
+						'maxlength' => '10',
+					),
+				)); 
+		?>
 		<?php echo $form->error($model,'PlannedEndDate'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Status'); ?>
-		<?php echo $form->textField($model,'Status'); ?>
+		<?php echo $form->dropDownList($model,'Status',array('0'=>'Passed','1'=>'Failed','2'=>'Inprogress','3'=>'No Execute'), array('options' => array('0'=>array('selected'=>true)))); ?>
 		<?php echo $form->error($model,'Status'); ?>
 	</div>
 
@@ -87,13 +119,13 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'DefectID'); ?>
-		<?php echo $form->textField($model,'DefectID'); ?>
+		<?php echo $form->numberField($model,'DefectID'); ?>
 		<?php echo $form->error($model,'DefectID'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'FinalStatus'); ?>
-		<?php echo $form->textField($model,'FinalStatus'); ?>
+		<?php echo $form->dropDownList($model,'FinalStatus',array('0'=>'Passed','1'=>'Failed','2'=>'Inprogress','3'=>'No Execute'), array('options' => array('0'=>array('selected'=>true)))); ?>
 		<?php echo $form->error($model,'FinalStatus'); ?>
 	</div>
 
