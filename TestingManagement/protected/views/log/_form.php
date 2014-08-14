@@ -21,22 +21,25 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'ID'); ?>
-		<?php echo $form->textField($model,'ID'); ?> <!--ini harus di isi dengan No dari model data, foreign key --> 
+		<?php echo $form->textField($model,'ID',array('readonly'=>true)); ?> <!--ini harus di isi dengan No dari model data, foreign key --> 
 	</div>
 	
 	<div class="row">
-		<?php echo $form->labelEx($model,'Stream'); ?>
-		<?php echo $form->textField($model,'Stream',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->labelEx($modelData,'Stream'); ?>
+		<?php echo $form->textField($modelData,'Stream',array('readonly'=>true)); ?>
+		<?php echo $form->error($modelData,'Stream'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'Scenario'); ?>
-		<?php echo $form->textField($model,'Scenario',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->labelEx($modelData,'Scenario'); ?>
+		<?php echo $form->textField($modelData,'Scenario',array('readonly'=>true)); ?>
+		<?php echo $form->error($modelData,'Scenario'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'TestCase'); ?>
-		<?php echo $form->textField($model,'TestCase',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->labelEx($modelData,'TestCase'); ?>
+		<?php echo $form->textField($modelData,'TestCase',array('readonly'=>true)); ?>
+		<?php echo $form->error($modelData,'TestCase'); ?>
 	</div>
 
 	<div class="row">

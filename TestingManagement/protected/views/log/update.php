@@ -18,4 +18,4 @@ $this->menu=array(
 
 <h1>Update Log <?php echo $model->No; ?></h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php $this->renderPartial('_form', array('model'=>$model,'modelData'=>$modelData)); ?>

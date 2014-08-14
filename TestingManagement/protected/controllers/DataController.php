@@ -62,7 +62,7 @@ class DataController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Data;
+		$model=new Data("create");
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -87,7 +87,7 @@ class DataController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+		$model->scenario = 'update';
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -142,6 +142,10 @@ class DataController extends Controller
 			'model'=>$model,
 		));
 	}
+	
+	
+	
+	////Buat Liat Log yg ID nya dari Data ini
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.

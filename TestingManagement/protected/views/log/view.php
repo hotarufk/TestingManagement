@@ -9,7 +9,6 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'List Log', 'url'=>array('index')),
-	array('label'=>'Create Log', 'url'=>array('create')),
 	array('label'=>'Update Log', 'url'=>array('update', 'id'=>$model->No)),
 	array('label'=>'Delete Log', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->No),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Log', 'url'=>array('admin')),

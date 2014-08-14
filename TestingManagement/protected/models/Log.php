@@ -39,8 +39,10 @@ class Log extends CActiveRecord
 		return array(
 			array('ID, TanggalTest, Keterangan', 'required'),
 			array('ID', 'numerical', 'integerOnly'=>true),
+			array('TanggalTest','dateValidator'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
+			array('Stream,Scenario,TestCase','safe','safe'=>true,'on'=>'create,update'),
 			array('No, ID, TanggalTest, Keterangan', 'safe', 'on'=>'search'),
 		);
 	}
@@ -57,6 +59,34 @@ class Log extends CActiveRecord
 		);
 	}
 
+	public function dateValidator($attribute,$params){
+		//kamus Lokal
+		
+		//ALgoritma
+		//buat kriteria pencarian nya
+		//hitung jumlah data yang di temukan, kalo lebih besar dari 0 maka false.
+		$count =$this->countByAttributes(array(
+            'ID'=>$this->ID,
+			'TanggalTest'=>$this->TanggalTest
+        ));
+
+		$message = "hasil count : ".$count;
+		$category = "date validator";
+		Yii::trace("hasil count : ".$count."  tanggal test, id    ".$this->TanggalTest."  , ".'2');
+		if ($count <= 0 ){
+			$message="valid";
+			$category="date debugging";
+			Yii::trace($message);
+		}else{
+				$message="invalid";
+				$category="date debugging";
+				Yii::trace($message);
+			$this->addError('TanggalTest', 'Keterangan Pada Tanggal Ini Telah Dibuat');
+		}	
+	
+	}
+	
+	
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */
@@ -96,6 +126,36 @@ class Log extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+	
+	public function searchByID($dataID, $routeUrl = null, $templateParams = array()){
+	 
+        $criteria = new CDbCriteria;
+ 
+        $criteria->compare('ID', $dataID);
+
+        $item_count = self::model()->count($criteria);
+ 
+        $pages = new CPagination($item_count);
+        $pages->setPageSize(10);
+ 
+        $sort = new CSort();
+ 
+        if (!empty($templateParams)) {
+            $pages->params = $templateParams;
+            $sort->params = $templateParams;
+        }
+ 
+        if ($routeUrl) {
+            $pages->route = $routeUrl;
+            $sort->route = $routeUrl;
+        }
+ 
+        return new CActiveDataProvider($this, array(
+            'criteria' => $criteria,
+            'pagination' => $pages,
+            'sort' => $sort,
+        ));
 	}
 
 	/**

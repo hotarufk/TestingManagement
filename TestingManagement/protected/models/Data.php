@@ -40,14 +40,28 @@ class Data extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('ID, Stream, Scenario, TestCase, TesterWipro, TesterTsel, Cycle, PlannedStartDate, PlannedEndDate, Status, Remark, DefectID, FinalStatus', 'required'),
+			array('ID, Stream, Scenario, TestCase, TesterWipro, TesterTsel, Cycle, PlannedStartDate, PlannedEndDate, Status', 'required'),
 			array('ID, Cycle, Status, DefectID, FinalStatus', 'numerical', 'integerOnly'=>true),
+			array('PlannedStartDate, PlannedEndDate','dateValidator','on'=>'create,update'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('No, ID, Stream, Scenario, TestCase, TesterWipro, TesterTsel, Cycle, PlannedStartDate, PlannedEndDate, Status, Remark, DefectID, FinalStatus', 'safe', 'on'=>'search'),
 		);
 	}
-
+	
+	//fungsi pengecheckan apakah ada data yang sama atau engga
+	public function checkunique(){
+	
+		$count =$this->countByAttributes(array(
+            'ID'=>$this->ID,
+			'TanggalTest'=>$this->TanggalTest
+        ));
+	
+	
+	
+	
+	}
+	
 	/**
 	 * @return array relational rules.
 	 */
@@ -95,6 +109,26 @@ class Data extends CActiveRecord
 	 * @return CActiveDataProvider the data provider that can return the models
 	 * based on the search/filter conditions.
 	 */
+	 
+	 //
+	public function dateValidator($attribute,$params){
+		//kamus lokal
+		$message ='start date : '.$this->PlannedStartDate.'  end date : '.$this->PlannedEndDate;
+		$category = 'date initial in validator cek value';
+		Yii::trace($message, $category);
+		//function
+        if (($this->PlannedStartDate <= $this->PlannedEndDate) OR ($this->PlannedEndDate === date("Y-m-d", $d))){
+			$message="valid";
+			$category="date debugging";
+			Yii::trace($message, $category);
+		}else{
+				$message="invalid";
+				$category="date debugging";
+				Yii::trace($message, $category);
+			$this->addError('PlannedStartDate', 'Planned Start Date invalid, must be >= than Planned End Date');
+		}
+	}
+	
 	public function search()
 	{
 		// @todo Please modify the following code to remove attributes that should not be searched.

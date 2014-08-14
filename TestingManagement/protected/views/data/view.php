@@ -13,6 +13,8 @@ $this->menu=array(
 	array('label'=>'Update Data', 'url'=>array('update', 'id'=>$model->No)),
 	array('label'=>'Delete Data', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->No),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Data', 'url'=>array('admin')),
+	array('label'=>'Create Log', 'url'=>array('log/create','id'=>$model->No)),
+	array('label'=>'View Log', 'url'=>array('log/viewAll','id'=>$model->No)),
 );
 ?>
 

@@ -32,7 +32,7 @@ class LogController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','viewAll'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -72,19 +72,18 @@ class LogController extends Controller
 			throw new CHttpException(404,'The requested page does not exist.');		
 		
 		///buat log setelah pastikan id yg di input ada
-		$message;
-
-		$model=new Log;
+		$message =$modelData->Scenario."  ".$modelData->Stream."  ".$modelData->TestCase;
+		$category = "debugging Log";
+		Yii::trace($message, $category);
+		$model=new Log('create');
 		$data = array(
 			"ID" => $id,
-			"Stream"=>$modelData->Stream,
-			"Scenario"=>$modelData->Scenario,
-			"TestCase"=>$modelData->TestCase,
 		);
 		$model->setAttributes($data,false);
-		
+		$message ="isi Scenario dalam model : ".$model->Scenario;
+				Yii::trace($message, $category);
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Log']))
 		{
@@ -106,8 +105,10 @@ class LogController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
+	
+			
 		$model=$this->loadModel($id);
-
+		$modelData=Data::model()->findByPk($model->ID);
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -120,6 +121,7 @@ class LogController extends Controller
 
 		$this->render('update',array(
 			'model'=>$model,
+			'modelData'=>$modelData
 		));
 	}
 
@@ -137,6 +139,24 @@ class LogController extends Controller
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
 
+	//show all log wih specific data
+		public function actionViewAll($id)
+	{
+		$model=new Log('search');
+		$model->unsetAttributes();  // clear any default values
+		
+        if (isset($_GET['Log']))
+            $model->attributes = $_GET['Log'];
+ 		
+		if($model===null)
+			throw new CHttpException(404,'The requested page does not exist.');	
+		
+		$this->render('viewAll',array(
+			'model'=>$model,
+			'id'=>$id,
+		));
+	}
+	
 	/**
 	 * Lists all models.
 	 */
