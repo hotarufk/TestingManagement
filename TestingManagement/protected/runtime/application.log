@@ -4001,3 +4001,170 @@ in C:\xampp\htdocs\TestingManagement\TestingManagement\index.php (13)
 2014/08/14 04:10:10 [warning] [application] Failed to set unsafe attribute "Remark" of "Data".
 in C:\xampp\htdocs\TestingManagement\TestingManagement\protected\controllers\DataController.php (72)
 in C:\xampp\htdocs\TestingManagement\TestingManagement\index.php (13)
+2014/08/14 11:28:32 [warning] [application] Failed to set unsafe attribute "Remark" of "Data".
+in C:\xampp\htdocs\TestingManagement\TestingManagement\protected\controllers\DataController.php (72)
+in C:\xampp\htdocs\TestingManagement\TestingManagement\index.php (13)
+2014/08/14 11:41:23 [warning] [application] Failed to set unsafe attribute "Remark" of "Data".
+in C:\xampp\htdocs\TestingManagement\TestingManagement\protected\controllers\DataController.php (72)
+in C:\xampp\htdocs\TestingManagement\TestingManagement\index.php (13)
+2014/08/14 11:41:40 [warning] [application] Failed to set unsafe attribute "Remark" of "Data".
+in C:\xampp\htdocs\TestingManagement\TestingManagement\protected\controllers\DataController.php (72)
+in C:\xampp\htdocs\TestingManagement\TestingManagement\index.php (13)
+2014/08/14 11:42:11 [warning] [application] Failed to set unsafe attribute "Remark" of "Data".
+in C:\xampp\htdocs\TestingManagement\TestingManagement\protected\controllers\DataController.php (72)
+in C:\xampp\htdocs\TestingManagement\TestingManagement\index.php (13)
+2014/08/14 11:42:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "loadScenario".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('loadScenario')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('loadScenario')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('log/loadScenari...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\TestingManagement\TestingManagement\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TestingManagement/TestingManagement/index.php?r=log/loadScenario
+HTTP_REFERER=http://localhost/TestingManagement/TestingManagement/index.php?r=data/create
+---
+2014/08/14 11:42:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "loadScenario".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('loadScenario')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('loadScenario')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('log/loadScenari...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\TestingManagement\TestingManagement\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TestingManagement/TestingManagement/index.php?r=log/loadScenario
+HTTP_REFERER=http://localhost/TestingManagement/TestingManagement/index.php?r=data/create
+---
+2014/08/14 11:43:42 [warning] [application] Failed to set unsafe attribute "Remark" of "Data".
+in C:\xampp\htdocs\TestingManagement\TestingManagement\protected\controllers\DataController.php (72)
+in C:\xampp\htdocs\TestingManagement\TestingManagement\index.php (13)
+2014/08/14 11:44:20 [warning] [application] Failed to set unsafe attribute "Remark" of "Data".
+in C:\xampp\htdocs\TestingManagement\TestingManagement\protected\controllers\DataController.php (72)
+in C:\xampp\htdocs\TestingManagement\TestingManagement\index.php (13)
+2014/08/14 12:07:04 [warning] [application] Failed to set unsafe attribute "Remark" of "Data".
+in C:\xampp\htdocs\TestingManagement\TestingManagement\protected\controllers\DataController.php (72)
+in C:\xampp\htdocs\TestingManagement\TestingManagement\index.php (13)
+2014/08/14 12:07:04 [error] [php] Invalid argument supplied for foreach() (C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php:2325)
+Stack trace:
+#0 C:\xampp\htdocs\TestingManagement\TestingManagement\protected\views\data\_form.php(42): CActiveForm->dropDownList()
+#1 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): DataController->renderInternal()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(869): DataController->renderFile()
+#4 C:\xampp\htdocs\TestingManagement\TestingManagement\protected\views\data\create.php(18): DataController->renderPartial()
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): DataController->renderInternal()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(869): DataController->renderFile()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(782): DataController->renderPartial()
+#9 C:\xampp\htdocs\TestingManagement\TestingManagement\protected\controllers\DataController.php(79): DataController->render()
+#10 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): DataController->actionCreate()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): DataController->runAction()
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#15 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): DataController->filterAccessControl()
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(265): DataController->runActionWithFilters()
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): DataController->run()
+#20 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#21 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#22 C:\xampp\htdocs\TestingManagement\TestingManagement\index.php(13): CWebApplication->run()
+REQUEST_URI=/TestingManagement/TestingManagement/index.php?r=data/create
+in C:\xampp\htdocs\TestingManagement\TestingManagement\protected\views\data\_form.php (42)
+in C:\xampp\htdocs\TestingManagement\TestingManagement\protected\views\data\create.php (18)
+in C:\xampp\htdocs\TestingManagement\TestingManagement\protected\controllers\DataController.php (79)
+2014/08/14 12:22:17 [warning] [application] Failed to set unsafe attribute "Remark" of "Data".
+in C:\xampp\htdocs\TestingManagement\TestingManagement\protected\controllers\DataController.php (72)
+in C:\xampp\htdocs\TestingManagement\TestingManagement\index.php (13)
+2014/08/14 12:22:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "loadScenario".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('loadScenario')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('loadScenario')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('log/loadScenari...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\TestingManagement\TestingManagement\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TestingManagement/TestingManagement/index.php?r=log/loadScenario
+HTTP_REFERER=http://localhost/TestingManagement/TestingManagement/index.php?r=data/create
+---
+2014/08/14 12:22:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "loadScenario".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('loadScenario')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('loadScenario')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('log/loadScenari...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\TestingManagement\TestingManagement\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TestingManagement/TestingManagement/index.php?r=log/loadScenario
+HTTP_REFERER=http://localhost/TestingManagement/TestingManagement/index.php?r=data/create
+---
+2014/08/14 12:22:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "loadScenario".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('loadScenario')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('loadScenario')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('log/loadScenari...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\TestingManagement\TestingManagement\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TestingManagement/TestingManagement/index.php?r=log/loadScenario
+HTTP_REFERER=http://localhost/TestingManagement/TestingManagement/index.php?r=data/create
+---
+2014/08/14 12:22:40 [warning] [application] Failed to set unsafe attribute "Remark" of "Data".
+in C:\xampp\htdocs\TestingManagement\TestingManagement\protected\controllers\DataController.php (72)
+in C:\xampp\htdocs\TestingManagement\TestingManagement\index.php (13)
+2014/08/14 12:23:19 [warning] [application] Failed to set unsafe attribute "Remark" of "Data".
+in C:\xampp\htdocs\TestingManagement\TestingManagement\protected\controllers\DataController.php (72)
+in C:\xampp\htdocs\TestingManagement\TestingManagement\index.php (13)
+2014/08/14 12:23:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "loadScenario".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('loadScenario')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('loadScenario')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('log/loadScenari...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\TestingManagement\TestingManagement\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TestingManagement/TestingManagement/index.php?r=log/loadScenario
+HTTP_REFERER=http://localhost/TestingManagement/TestingManagement/index.php?r=data/create
+---
+2014/08/14 12:25:09 [warning] [application] Failed to set unsafe attribute "Remark" of "Data".
+in C:\xampp\htdocs\TestingManagement\TestingManagement\protected\controllers\DataController.php (72)
+in C:\xampp\htdocs\TestingManagement\TestingManagement\index.php (13)
+2014/08/14 12:25:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "loadScenario".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('loadScenario')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('loadScenario')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('log/loadScenari...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\TestingManagement\TestingManagement\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TestingManagement/TestingManagement/index.php?r=log/loadScenario
+HTTP_REFERER=http://localhost/TestingManagement/TestingManagement/index.php?r=data/create
+---
+2014/08/14 12:25:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "loadScenario".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('loadScenario')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('loadScenario')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('log/loadScenari...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\TestingManagement\TestingManagement\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TestingManagement/TestingManagement/index.php?r=log/loadScenario
+HTTP_REFERER=http://localhost/TestingManagement/TestingManagement/index.php?r=data/create
+---
+2014/08/14 12:27:20 [warning] [application] Failed to set unsafe attribute "Remark" of "Data".
+in C:\xampp\htdocs\TestingManagement\TestingManagement\protected\controllers\DataController.php (72)
+in C:\xampp\htdocs\TestingManagement\TestingManagement\index.php (13)
+2014/08/14 12:27:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "loadScenario".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('loadScenario')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('loadScenario')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('log/loadScenari...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\TestingManagement\TestingManagement\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TestingManagement/TestingManagement/index.php?r=log/loadScenario
+HTTP_REFERER=http://localhost/TestingManagement/TestingManagement/index.php?r=data/create
+---
+2014/08/14 15:09:20 [warning] [application] Failed to set unsafe attribute "Remark" of "Data".
+in C:\xampp\htdocs\TestingManagement\TestingManagement\protected\controllers\DataController.php (72)
+in C:\xampp\htdocs\TestingManagement\TestingManagement\index.php (13)

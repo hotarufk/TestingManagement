@@ -210,4 +210,8 @@ class LogController extends Controller
 			Yii::app()->end();
 		}
 	}
+	
+	
+	
+	
 }

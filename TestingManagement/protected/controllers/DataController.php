@@ -65,7 +65,7 @@ class DataController extends Controller
 		$model=new Data("create");
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Data']))
 		{
@@ -174,4 +174,18 @@ class DataController extends Controller
 			Yii::app()->end();
 		}
 	}
+	
+	//custom function
+	public function actionLoadScenario()
+{
+   $data=Data::model()->findAll('Stream=:Stream', 
+   array(':Stream'=>$_POST['Stream']));
+ 
+   $data=CHtml::listData($data,'Stream','Stream');
+ 
+   echo "<option value=''>Select City</option>";
+   foreach($data as $value=>$ScenarioList)
+   echo CHtml::tag('option', array('value'=>$value),CHtml::encode($ScenarioList),true);
+}
+	
 }
