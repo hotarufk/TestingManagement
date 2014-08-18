@@ -2,14 +2,7 @@
 /* @var $this LogController */
 /* @var $model Log */
 
-$this->breadcrumbs=array(
-	'Logs'=>array('index'),
-	'Manage',
-);
 
-$this->menu=array(
-	array('label'=>'Create Log', 'url'=>array('create')),
-);
 ?>
 
 

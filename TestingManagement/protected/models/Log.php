@@ -162,7 +162,7 @@ class Log extends CActiveRecord
             $sort->route = $routeUrl;
         }
  
-        return new CActiveNdataProvider($this, array(
+        return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
             'pagination' => $pages,
             'sort' => $sort,

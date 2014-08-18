@@ -119,7 +119,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Remark'); ?>
-		<?php echo $form->textArea($model,'Remark',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->textfield($model,'Remark',array('rows'=>6, 'cols'=>50)); ?>
 		<?php echo $form->error($model,'Remark'); ?>
 	</div>
 

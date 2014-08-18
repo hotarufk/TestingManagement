@@ -16,7 +16,7 @@
  * @property string $PlannedEndDate
  * @property integer $Status
  * @property string $Remark
- * @property integer $DefectdataID
+ * @property integer $DefectID
  * @property integer $FinalStatus
  *
  * The followings are the available model relations:
@@ -41,11 +41,11 @@ class Data extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('no, Stream, Scenario, TestCase, TesterWipro, TesterTsel, Cycle, PlannedStartDate, PlannedEndDate, Status', 'required'),
-			array('no, Cycle, Status, DefectdataID, FinalStatus', 'numerical', 'integerOnly'=>true),
+			array('no, Cycle, Status, DefectID, FinalStatus', 'numerical', 'integerOnly'=>true),
 			array('PlannedStartDate, PlannedEndDate','dateValdataIDator','on'=>'create,update'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('No, dataID, Stream, Scenario, TestCase, TesterWipro, TesterTsel, Cycle, PlannedStartDate, PlannedEndDate, Status, Remark, DefectdataID, FinalStatus', 'safe', 'on'=>'search'),
+			array('No, dataID, Stream, Scenario, TestCase, TesterWipro, TesterTsel, Cycle, PlannedStartDate, PlannedEndDate, Status, Remark, DefectID, FinalStatus', 'safe', 'on'=>'search'),
 		);
 	}
 	
@@ -88,7 +88,7 @@ class Data extends CActiveRecord
 			'PlannedEndDate' => 'Planned End Date',
 			'Status' => 'Status',
 			'Remark' => 'Remark',
-			'DefectdataID' => 'Defect',
+			'DefectID' => 'Defect',
 			'FinalStatus' => 'Final Status',
 		);
 	}
@@ -113,7 +113,7 @@ class Data extends CActiveRecord
 		$category = 'date initial in valdataIDator cek value';
 		Yii::trace($message, $category);
 		//function
-        if (($this->PlannedStartDate <= $this->PlannedEndDate) OR ($this->PlannedEndDate === date("Y-m-d", $d))){
+        if (($this->PlannedStartDate <= $this->PlannedEndDate) OR ($this->PlannedEndDate === date("Y-m-d"))){
 			$message="valid";
 			$category="date debugging";
 			Yii::trace($message, $category);
