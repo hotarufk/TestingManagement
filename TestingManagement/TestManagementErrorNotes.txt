@@ -1,2 +1,4 @@
 Testing Management Error Notes:
 -Page: Data, Skenario: Create; Data.DefectdataID not defined.
+-Page: Data, Skenario: Manage; tombol List Data mengembalikan halaman pada data/index. Perlukah?
+-Page: Log, Skenario: Create; Error 400: Request Invalid. Jika log dibuat dari data/create, mohon dihapus.
