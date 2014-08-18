@@ -8153,3 +8153,25 @@ HTTP_REFERER=http://localhost/TestingManagement/TestingManagement/index.php?r=da
 2014/08/18 08:30:01 [warning] [application] Failed to set unsafe attribute "DefectID" of "Data".
 in C:\xampp\htdocs\TestingManagement\TestingManagement\protected\controllers\DataController.php (139)
 in C:\xampp\htdocs\TestingManagement\TestingManagement\index.php (13)
+2014/08/18 08:41:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "admin".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('admin')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('data/admin')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\TestingManagement\TestingManagement\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TestingManagement/TestingManagement/index.php?r=data/admin
+HTTP_REFERER=http://localhost/TestingManagement/TestingManagement/index.php?r=data/create
+---
+2014/08/18 08:41:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "loadScenario".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('loadScenario')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('loadScenario')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('log/loadScenari...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\TestingManagement\TestingManagement\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/TestingManagement/TestingManagement/index.php?r=log/loadScenario
+HTTP_REFERER=http://localhost/TestingManagement/TestingManagement/index.php?r=data/update&id=1
+---
