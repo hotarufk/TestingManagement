@@ -120,18 +120,18 @@ class DataController extends Controller
 	/**
 	 * Lists all models.
 	 */
-	public function actionIndex()
-	{
-		$dataProvider=new CActiveDataProvider('Data');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
-	}
+	// public function actionIndex()
+	// {
+		// $dataProvider=new CActiveDataProvider('Data');
+		// $this->render('index',array(
+			// 'dataProvider'=>$dataProvider,
+		// ));
+	// }
 
 	/**
 	 * Manages all models.
 	 */
-	public function actionAdmin()
+	public function actionIndex()
 	{
 		$model=new Data('search');
 		$model->unsetAttributes();  // clear any default values

@@ -18,7 +18,6 @@ $this->menu=array(
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'logID',
 	array(
 		//'header' => 'Stream',
         'name' => 'data0.Stream',
