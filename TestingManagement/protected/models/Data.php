@@ -4,8 +4,8 @@
  * This is the model class for table "data".
  *
  * The followings are the available columns in table 'data':
- * @property integer $No
- * @property integer $ID
+ * @property integer $dataID
+ * @property integer $no
  * @property string $Stream
  * @property string $Scenario
  * @property string $TestCase
@@ -16,7 +16,7 @@
  * @property string $PlannedEndDate
  * @property integer $Status
  * @property string $Remark
- * @property integer $DefectID
+ * @property integer $DefectdataID
  * @property integer $FinalStatus
  *
  * The followings are the available model relations:
@@ -33,19 +33,19 @@ class Data extends CActiveRecord
 	}
 
 	/**
-	 * @return array validation rules for model attributes.
+	 * @return array valdataIDation rules for model attributes.
 	 */
 	public function rules()
 	{
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('ID, Stream, Scenario, TestCase, TesterWipro, TesterTsel, Cycle, PlannedStartDate, PlannedEndDate, Status', 'required'),
-			array('ID, Cycle, Status, DefectID, FinalStatus', 'numerical', 'integerOnly'=>true),
-			array('PlannedStartDate, PlannedEndDate','dateValidator','on'=>'create,update'),
+			array('no, Stream, Scenario, TestCase, TesterWipro, TesterTsel, Cycle, PlannedStartDate, PlannedEndDate, Status', 'required'),
+			array('no, Cycle, Status, DefectdataID, FinalStatus', 'numerical', 'integerOnly'=>true),
+			array('PlannedStartDate, PlannedEndDate','dateValdataIDator','on'=>'create,update'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('No, ID, Stream, Scenario, TestCase, TesterWipro, TesterTsel, Cycle, PlannedStartDate, PlannedEndDate, Status, Remark, DefectID, FinalStatus', 'safe', 'on'=>'search'),
+			array('No, dataID, Stream, Scenario, TestCase, TesterWipro, TesterTsel, Cycle, PlannedStartDate, PlannedEndDate, Status, Remark, DefectdataID, FinalStatus', 'safe', 'on'=>'search'),
 		);
 	}
 	
@@ -53,13 +53,9 @@ class Data extends CActiveRecord
 	public function checkunique(){
 	
 		$count =$this->countByAttributes(array(
-            'ID'=>$this->ID,
+            'no'=>$this->no,
 			'TanggalTest'=>$this->TanggalTest
         ));
-	
-	
-	
-	
 	}
 	
 	/**
@@ -70,7 +66,7 @@ class Data extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'log' => array(self::HAS_ONE, 'Log', 'ID'),
+			'log' => array(self::HAS_ONE, 'Log', 'dataID'),
 		);
 	}
 
@@ -80,8 +76,8 @@ class Data extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'No' => 'No',
-			'ID' => 'ID',
+			'dataID' => 'dataID',
+			'no' => 'no',
 			'Stream' => 'Stream',
 			'Scenario' => 'Scenario',
 			'TestCase' => 'Test Case',
@@ -92,7 +88,7 @@ class Data extends CActiveRecord
 			'PlannedEndDate' => 'Planned End Date',
 			'Status' => 'Status',
 			'Remark' => 'Remark',
-			'DefectID' => 'Defect',
+			'DefectdataID' => 'Defect',
 			'FinalStatus' => 'Final Status',
 		);
 	}
@@ -102,19 +98,19 @@ class Data extends CActiveRecord
 	 *
 	 * Typical usecase:
 	 * - Initialize the model fields with values from filter form.
-	 * - Execute this method to get CActiveDataProvider instance which will filter
+	 * - Execute this method to get CActiveDataProvdataIDer instance which will filter
 	 * models according to data in model fields.
-	 * - Pass data provider to CGridView, CListView or any similar widget.
+	 * - Pass data provdataIDer to CGrdataIDView, CListView or any similar wdataIDget.
 	 *
-	 * @return CActiveDataProvider the data provider that can return the models
+	 * @return CActiveDataProvdataIDer the data provdataIDer that can return the models
 	 * based on the search/filter conditions.
 	 */
 	 
 	 //
-	public function dateValidator($attribute,$params){
+	public function dateValdataIDator($attribute,$params){
 		//kamus lokal
 		$message ='start date : '.$this->PlannedStartDate.'  end date : '.$this->PlannedEndDate;
-		$category = 'date initial in validator cek value';
+		$category = 'date initial in valdataIDator cek value';
 		Yii::trace($message, $category);
 		//function
         if (($this->PlannedStartDate <= $this->PlannedEndDate) OR ($this->PlannedEndDate === date("Y-m-d", $d))){
@@ -125,7 +121,7 @@ class Data extends CActiveRecord
 				$message="invalid";
 				$category="date debugging";
 				Yii::trace($message, $category);
-			$this->addError('PlannedStartDate', 'Planned Start Date invalid, must be >= than Planned End Date');
+			$this->addError('PlannedStartDate', 'Planned Start Date invaldataID, must be >= than Planned End Date');
 		}
 	}
 	
@@ -135,8 +131,8 @@ class Data extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('No',$this->No);
-		$criteria->compare('ID',$this->ID);
+		$criteria->compare('dataID',$this->dataID);
+		$criteria->compare('no',$this->no);
 		$criteria->compare('Stream',$this->Stream,true);
 		$criteria->compare('Scenario',$this->Scenario,true);
 		$criteria->compare('TestCase',$this->TestCase,true);

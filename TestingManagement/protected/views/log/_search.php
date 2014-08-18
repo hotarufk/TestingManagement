@@ -12,13 +12,13 @@
 )); ?>
 
 	<div class="row">
-		<?php echo $form->label($model,'No'); ?>
-		<?php echo $form->textField($model,'No'); ?>
+		<?php echo $form->label($model,'id'); ?>
+		<?php echo $form->textField($model,'id'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'ID'); ?>
-		<?php echo $form->textField($model,'ID'); ?>
+		<?php echo $form->label($model,'DataID'); ?>
+		<?php echo $form->textField($model,'DataID'); ?>
 	</div>
 
 	<div class="row">

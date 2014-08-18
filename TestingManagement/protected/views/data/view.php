@@ -4,27 +4,27 @@
 
 $this->breadcrumbs=array(
 	'Datas'=>array('index'),
-	$model->No,
+	$model->dataID,
 );
 
 $this->menu=array(
 	array('label'=>'List Data', 'url'=>array('index')),
 	array('label'=>'Create Data', 'url'=>array('create')),
-	array('label'=>'Update Data', 'url'=>array('update', 'id'=>$model->No)),
-	array('label'=>'Delete Data', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->No),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Update Data', 'url'=>array('update', 'id'=>$model->dataID)),
+	array('label'=>'Delete Data', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Data', 'url'=>array('admin')),
-	array('label'=>'Create Log', 'url'=>array('log/create','id'=>$model->No)),
-	array('label'=>'View Log', 'url'=>array('log/viewAll','id'=>$model->No)),
+	array('label'=>'Create Log', 'url'=>array('log/create','id'=>$model->dataID)),
+	array('label'=>'View Log', 'url'=>array('log/viewAll','id'=>$model->dataID)),
 );
 ?>
 
-<h1>View Data #<?php echo $model->No; ?></h1>
+<h1>View Data #<?php echo $model->dataID; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'No',
-		'ID',
+		'dataID',
+		'no',
 		'Stream',
 		'Scenario',
 		'TestCase',

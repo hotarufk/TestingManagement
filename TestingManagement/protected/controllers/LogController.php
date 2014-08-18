@@ -2,16 +2,13 @@
 
 class LogController extends Controller
 {
-	
-
-
-
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	public $layout='//layouts/column2';
 	public $modelData;
+
 	/**
 	 * @return array action filters
 	 */
@@ -33,7 +30,7 @@ class LogController extends Controller
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('index','view','viewAll'),
-				'users'=>array('*'),
+				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('create','update'),
@@ -66,22 +63,22 @@ class LogController extends Controller
 	 */
 	public function actionCreate($id)
 	{
-		
-		$modelData=Data::model()->findByPk($id);
-		if($modelData===null)
-			throw new CHttpException(404,'The requested page does not exist.');		
-		
-		///buat log setelah pastikan id yg di input ada
-		$message =$modelData->Scenario."  ".$modelData->Stream."  ".$modelData->TestCase;
-		$category = "debugging Log";
-		Yii::trace($message, $category);
-		$model=new Log('create');
-		$data = array(
-			"ID" => $id,
-		);
-		$model->setAttributes($data,false);
-		$message ="isi Scenario dalam model : ".$model->Scenario;
-				Yii::trace($message, $category);
+        
+        $modelData=Data::model()->findByPk($id);
+        if($modelData===null)
+            throw new CHttpException(404,'The requested page does not exist.');        
+        
+        ///buat log setelah pastikan id yg di input ada
+        $message =$modelData->Scenario."  ".$modelData->Stream."  ".$modelData->TestCase;
+        $category = "debugging Log";
+        Yii::trace($message, $category);
+        $model=new Log('create');
+        $data = array(
+            "Ndata" => $id,
+        );
+        $model->setAttributes($data,false);
+        $message ="isi Scenario dalam model : ".$model->Scenario;
+                Yii::trace($message, $category);
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 
@@ -89,12 +86,14 @@ class LogController extends Controller
 		{
 			$model->attributes=$_POST['Log'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->No));
+				$this->redirect(array('view','id'=>$model->logID));
+
 		}
 
 		$this->render('create',array(
 			'model'=>$model,
-			'modelData'=>$modelData,
+	        'modelData'=>$modelData,
+
 		));
 	}
 
@@ -105,10 +104,9 @@ class LogController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-	
-			
 		$model=$this->loadModel($id);
-		$modelData=Data::model()->findByPk($model->ID);
+        $modelData=Data::model()->findByPk($model->Ndata);
+
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -116,12 +114,13 @@ class LogController extends Controller
 		{
 			$model->attributes=$_POST['Log'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->No));
+                $this->redirect(array('view','id'=>$model->Ndata));
 		}
 
 		$this->render('update',array(
 			'model'=>$model,
-			'modelData'=>$modelData
+			'modelData'=>$modelData,
+	        $this->redirect(array('view','id'=>$model->logID))
 		));
 	}
 
@@ -139,39 +138,15 @@ class LogController extends Controller
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
 
-	//show all log wih specific data
-		public function actionViewAll($id)
-	{
-		$model=new Log('search');
-		$model->unsetAttributes();  // clear any default values
-		
-        if (isset($_GET['Log']))
-            $model->attributes = $_GET['Log'];
- 		
-		if($model===null)
-			throw new CHttpException(404,'The requested page does not exist.');	
-		
-		$this->render('viewAll',array(
-			'model'=>$model,
-			'id'=>$id,
-		));
-	}
-	
 	/**
 	 * Lists all models.
 	 */
-	public function actionIndex()
-	{
-		$dataProvider=new CActiveDataProvider('Log');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
-	}
+
 
 	/**
 	 * Manages all models.
 	 */
-	public function actionAdmin()
+	public function actionIndex()
 	{
 		$model=new Log('search');
 		$model->unsetAttributes();  // clear any default values
@@ -184,8 +159,8 @@ class LogController extends Controller
 	}
 
 	/**
-	 * Returns the data model based on the primary key given in the GET variable.
-	 * If the data model is not found, an HTTP exception will be raised.
+	 * Returns the Ndata model based on the primary key given in the GET variable.
+	 * If the Ndata model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
 	 * @return Log the loaded model
 	 * @throws CHttpException
@@ -212,6 +187,27 @@ class LogController extends Controller
 	}
 	
 	
-	
+	//custom function
+    
+    //show all log wih specific Ndata
+        public function actionViewAll($id)
+    {
+        $model=new Log('search');
+        $model->unsetAttributes();  // clear any default values
+        
+        if (isset($_GET['Log']))
+            $model->attributes = $_GET['Log'];
+         
+        if($model===null)
+            throw new CHttpException(404,'The requested page does not exist.');    
+        
+        $this->render('viewAll',array(
+            'model'=>$model,
+            'id'=>$id,
+        ));
+    }
+
+
+
 	
 }
