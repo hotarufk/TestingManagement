@@ -45,10 +45,18 @@ $('.search-form form').submit(function(){
 		'Cycle',
 		'PlannedStartDate',
 		'PlannedEndDate',
-		'Status',
+		array(
+		'name'=>'Status',
+		'value'=>'$data->StatusText($data->Status)',
+		'filter'=>array("0" =>"Passed", "1" => "Failed","2"=>"In Progress","3"=>"No Execute"),
+		),
 		'Remark',
 		'DefectID',
-		'FinalStatus',
+		array(
+		'name'=>'FinalStatus',
+		'value'=>'$data->StatusText($data->FinalStatus)',
+		'filter'=>array("0" =>"Passed", "1" => "Failed","2"=>"In Progress","3"=>"No Execute"),
+		),
 	
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',

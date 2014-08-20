@@ -20,9 +20,9 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'dataID'); ?>
-		<?php echo $form->numberField($model,'dataID'); ?>
-		<?php echo $form->error($model,'dataID'); ?>
+		<?php echo $form->labelEx($model,'no'); ?>
+		<?php echo $form->numberField($model,'no'); ?>
+		<?php echo $form->error($model,'no'); ?>
 	</div>
 
 	<div class="row">

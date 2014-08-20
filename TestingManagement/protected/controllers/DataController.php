@@ -71,7 +71,7 @@ class DataController extends Controller
 		{
 			$model->attributes=$_POST['Data'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->No));
+				$this->redirect(array('view','id'=>$model->dataID));
 		}
 
 		$this->render('create',array(
@@ -95,7 +95,7 @@ class DataController extends Controller
 		{
 			$model->attributes=$_POST['Data'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->No));
+				$this->redirect(array('view','id'=>$model->dataID));
 		}
 
 		$this->render('update',array(
