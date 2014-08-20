@@ -32,9 +32,15 @@ $this->menu=array(
 		'Cycle',
 		'PlannedStartDate',
 		'PlannedEndDate',
-		'Status',
+		array(
+		'name'=>'Status',
+		'value'=>$model->StatusText($model->Status),
+		),
 		'Remark',
 		'DefectID',
-		'FinalStatus',
+		array(
+		'name'=>'FinalStatus',
+		'value'=>$model->StatusText($model->FinalStatus),
+		),
 	),
 )); ?>
