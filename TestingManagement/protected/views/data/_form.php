@@ -107,7 +107,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Status'); ?>
-		<?php echo $form->dropDownList($model,'Status',array('0'=>'Passed','1'=>'Failed','2'=>'Inprogress','3'=>'No Execute'), array('options' => array('0'=>array('selected'=>true)))); ?>
+		<?php echo $form->dropDownList($model,'Status',array('0'=>'Passed','1'=>'Failed','2'=>'Inprogress','3'=>'No Execute'), array('empty'=>'Select Status')); ?>
 		<?php echo $form->error($model,'Status'); ?>
 	</div>
 
@@ -125,7 +125,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'FinalStatus'); ?>
-		<?php echo $form->dropDownList($model,'FinalStatus',array('0'=>'Passed','1'=>'Failed','2'=>'Inprogress','3'=>'No Execute'), array('options' => array('0'=>array('selected'=>true)))); ?>
+		<?php echo $form->dropDownList($model,'FinalStatus',array('0'=>'Passed','1'=>'Failed','2'=>'Inprogress','3'=>'No Execute'), array('empty'=>'Select Status')); ?>
 		<?php echo $form->error($model,'FinalStatus'); ?>
 	</div>
 

@@ -9,10 +9,9 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Data', 'url'=>array('index')),
 	array('label'=>'Create Data', 'url'=>array('create')),
 	array('label'=>'View Data', 'url'=>array('view', 'dataID'=>$model->dataID)),
-	array('label'=>'Manage Data', 'url'=>array('admin')),
+	array('label'=>'Manage Data', 'url'=>array('index')),
 );
 ?>
 

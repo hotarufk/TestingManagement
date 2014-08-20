@@ -11,7 +11,7 @@ $this->menu=array(
 	array('label'=>'Create Data', 'url'=>array('create')),
 	array('label'=>'Update Data', 'url'=>array('update', 'id'=>$model->dataID)),
 	array('label'=>'Delete Data', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->dataID),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Data', 'url'=>array('admin')),
+	array('label'=>'Manage Data', 'url'=>array('index')),
 	array('label'=>'Create Log', 'url'=>array('log/create','id'=>$model->dataID)),
 	array('label'=>'View Log', 'url'=>array('log/viewAll','id'=>$model->dataID)),
 );

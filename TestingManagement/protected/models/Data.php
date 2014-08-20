@@ -187,4 +187,31 @@ class Data extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	
+	//function to translate 
+	function StatusText($val){
+		$text=' ';
+		switch ($val) { //'0'=>'Passed','1'=>'Failed','2'=>'Inprogress','3'=>'No Execute'
+		  case 0 :
+			$text='Passed';
+			break;
+		  case 1 :
+			$text='Failed';
+			break;
+		  case 2 :
+			$text='In Progress';
+			break;
+		  case 3 :
+			$text='No Execute';
+			break;
+		  default:
+			$text=' ____ ';
+		}
+		return $text;
+	}
+	
+
+	
+	
+	
 }
