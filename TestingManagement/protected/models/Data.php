@@ -42,7 +42,8 @@ class Data extends CActiveRecord
 		return array(
 			array('no, Stream, Scenario, TestCase, TesterWipro, TesterTsel, Cycle, PlannedStartDate, PlannedEndDate, Status', 'required'),
 			array('no, Cycle, Status, DefectID, FinalStatus', 'numerical', 'integerOnly'=>true),
-			array('PlannedStartDate, PlannedEndDate','dateValdataIDator','on'=>'create,update'),
+			array('PlannedStartDate, PlannedEndDate','dateValidator','on'=>'create,update'),
+			array('Stream,Scenario,TestCase','inputValidator','on'=>'create,update'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('No, dataID, Stream, Scenario, TestCase, TesterWipro, TesterTsel, Cycle, PlannedStartDate, PlannedEndDate, Status, Remark, DefectID, FinalStatus', 'safe', 'on'=>'search'),
@@ -107,7 +108,7 @@ class Data extends CActiveRecord
 	 */
 	 
 	 //
-	public function dateValdataIDator($attribute,$params){
+	public function dateValidator($attribute,$params){
 		//kamus lokal
 		$message ='start date : '.$this->PlannedStartDate.'  end date : '.$this->PlannedEndDate;
 		$category = 'date initial in valdataIDator cek value';
@@ -123,6 +124,31 @@ class Data extends CActiveRecord
 				Yii::trace($message, $category);
 			$this->addError('PlannedStartDate', 'Planned Start Date invaldataID, must be >= than Planned End Date');
 		}
+	}
+	
+	public function inputValidator($attribute,$params){		//pengecheckan terhadap stream,scenario,testcase
+		//kamus lokal
+		$count;
+		 
+		//algoritma
+
+		$count =$this->countByAttributes(array(
+				'Stream'=>$this->Stream,
+				'Scenario'=>$this->Scenario,
+				'TestCase'=>$this->TestCase
+			));
+		
+		if ($count <= 0 ){ //tidak ada data dengan kondisi sama kayak gini , asumsi bahwa search ini case insensitive -__-
+			$message="valid";
+			$category="data debugging";
+			Yii::trace($message);
+		}else{
+			$message="invalid";
+			$category="data debugging";
+			Yii::trace($message);
+			$this->addError('TestCase', 'Data dengan STream,SCenario, dan TestCase ini sudah ada');
+		}   	
+
 	}
 	
 	public function search()

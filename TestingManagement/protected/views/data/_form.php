@@ -20,26 +20,20 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'no'); ?>
-		<?php echo $form->numberField($model,'no'); ?>
-		<?php echo $form->error($model,'no'); ?>
+		<?php echo $form->labelEx($model,'dataID'); ?>
+		<?php echo $form->numberField($model,'dataID'); ?>
+		<?php echo $form->error($model,'dataID'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Stream'); ?>
-		<?php echo $form->dropDownList($model,'Stream', CHtml::listData(Data::model()->findAll(), 'Stream', 'Stream'), array('empty'=>'(other)', 
-						'ajax' => array(
-						'type'=>'POST', 
-						'url'=>$this->createUrl('log/loadScenario'), //or $this->createUrl('loadcities') if '$this' extends CController
-						'update'=>'#scenario_name', //or 'success' => 'function(data){...handle the data in the way you want...}',
-					  'data'=>array('Stream'=>'js:this.value'),
-					  )));  ?>
+		<?php echo $form->textArea($model,'Stream',array('rows'=>6, 'cols'=>50)); ?>
 		<?php echo $form->error($model,'Stream'); ?>
 	</div>
 	
 	<div class="row">
 		<?php echo $form->labelEx($model,'Scenario'); ?>
-		<?php echo CHtml::dropDownList('ScenarioList','', array(), array('prompt'=>'Select City'));?>
+		<?php echo$form->textArea($model,'Scenario',array('rows'=>6, 'cols'=>50)); ?>
 		<?php echo $form->error($model,'Scenario'); ?>
 	</div>
 
