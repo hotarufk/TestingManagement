@@ -29,7 +29,8 @@ $('.search-form form').submit(function(){
 <h1>Manage Data</h1>
 
 
-<?php $this->widget('zii.widgets.grid.CGridView', array(
+<?php $this->widget('bootstrap.widgets.TbGridView', array(
+	'type'=>'striped bordered condensed',
 	'id'=>'data-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
@@ -44,21 +45,13 @@ $('.search-form form').submit(function(){
 		'Cycle',
 		'PlannedStartDate',
 		'PlannedEndDate',
-		array(
-		'name'=>'Status',
-		'value'=>'$data->StatusText($data->Status)',
-		'filter'=>array("0"=>"Passed","1" =>"Failed", "2" => "In Progress", "3" =>"No Execute"),
-		),
+		'Status',
 		'Remark',
 		'DefectID',
-		array(
-		'name'=>'FinalStatus',
-		'value'=>'$data->StatusText($data->FinalStatus)',
-		'filter'=>array("0"=>"Passed","1" =>"Failed", "2" => "In Progress", "3" =>"No Execute"),
-		),
+		'FinalStatus',
 	
 		array(
-			'class'=>'CButtonColumn',
+			'class'=>'bootstrap.widgets.TbButtonColumn',
 		),
 	),
 )); ?>
