@@ -2,10 +2,6 @@
 /* @var $this DataController */
 /* @var $model Data */
 
-$this->breadcrumbs=array(
-	'Datas'=>array('index'),
-	'Create',
-);
 
 $this->menu=array(
 	array('label'=>'Manage Data', 'url'=>array('index')),

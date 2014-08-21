@@ -111,7 +111,7 @@ class Data extends CActiveRecord
 	public function dateValidator($attribute,$params){
 		//kamus lokal
 		$message ='start date : '.$this->PlannedStartDate.'  end date : '.$this->PlannedEndDate;
-		$category = 'date initial in valdataIDator cek value';
+		$category = 'date initial in validator cek value';
 		Yii::trace($message, $category);
 		//function
         if (($this->PlannedStartDate <= $this->PlannedEndDate) OR ($this->PlannedEndDate === date("Y-m-d"))){
@@ -122,7 +122,7 @@ class Data extends CActiveRecord
 				$message="invalid";
 				$category="date debugging";
 				Yii::trace($message, $category);
-			$this->addError('PlannedStartDate', 'Planned Start Date invaldataID, must be >= than Planned End Date');
+			$this->addError('PlannedStartDate', 'Planned Start Date invalid, must be >= than Planned End Date');
 		}
 	}
 	
@@ -146,7 +146,7 @@ class Data extends CActiveRecord
 			$message="invalid";
 			$category="data debugging";
 			Yii::trace($message);
-			$this->addError('TestCase', 'Data dengan STream,SCenario, dan TestCase ini sudah ada');
+			$this->addError('TestCase', 'Data dengan Stream,SCenario, dan TestCase ini sudah ada');
 		}   	
 
 	}

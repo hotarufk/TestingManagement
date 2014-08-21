@@ -8399,3 +8399,172 @@ in C:\xampp\htdocs\TestingManagement\TestingManagement\index.php (13)
 2014/08/20 12:27:23 [warning] [application] Failed to set unsafe attribute "Remark" of "Data".
 in C:\xampp\htdocs\TestingManagement\TestingManagement\protected\controllers\DataController.php (72)
 in C:\xampp\htdocs\TestingManagement\TestingManagement\index.php (13)
+2014/08/21 06:26:52 [warning] [application] Failed to set unsafe attribute "Remark" of "Data".
+in C:\xampp\htdocs\TestingManagement\TestingManagement\protected\controllers\DataController.php (72)
+in C:\xampp\htdocs\TestingManagement\TestingManagement\index.php (13)
+2014/08/21 06:27:03 [warning] [application] Failed to set unsafe attribute "Remark" of "Data".
+in C:\xampp\htdocs\TestingManagement\TestingManagement\protected\controllers\DataController.php (96)
+in C:\xampp\htdocs\TestingManagement\TestingManagement\index.php (13)
+2014/08/21 06:34:57 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#9 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('data/view')
+#10 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\TestingManagement\TestingManagement\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/TestingManagement/TestingManagement/index.php?r=data/view&dataID=9
+HTTP_REFERER=http://localhost/TestingManagement/TestingManagement/index.php?r=data/update&id=9
+---
+2014/08/21 06:36:27 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#9 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('data/view')
+#10 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\TestingManagement\TestingManagement\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/TestingManagement/TestingManagement/index.php?r=data/view&dataID=9
+HTTP_REFERER=http://localhost/TestingManagement/TestingManagement/index.php?r=data/update&id=9
+---
+2014/08/21 06:37:44 [warning] [application] Failed to set unsafe attribute "Remark" of "Data".
+in C:\xampp\htdocs\TestingManagement\TestingManagement\protected\controllers\DataController.php (96)
+in C:\xampp\htdocs\TestingManagement\TestingManagement\index.php (13)
+2014/08/21 06:37:51 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'testingdb.log' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `log`.
+in C:\xampp\htdocs\TestingManagement\TestingManagement\protected\controllers\LogController.php (195)
+in C:\xampp\htdocs\TestingManagement\TestingManagement\index.php (13)
+2014/08/21 06:37:51 [error] [exception.CDbException] exception 'CDbException' with message 'The table "log" for active record class "Log" cannot be found in the database.' in C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php:2362
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Log))
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(79): CActiveRecord->getMetaData()
+#2 C:\xampp\htdocs\TestingManagement\TestingManagement\protected\controllers\LogController.php(195): CActiveRecord->__construct('search')
+#3 [internal function]: LogController->actionViewAll('9')
+#4 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(LogController), Array)
+#5 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(LogController), Object(ReflectionMethod), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('viewAll')
+#15 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('log/viewAll')
+#16 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\TestingManagement\TestingManagement\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/TestingManagement/TestingManagement/index.php?r=log/viewAll&id=9
+HTTP_REFERER=http://localhost/TestingManagement/TestingManagement/index.php?r=data/view&id=9
+---
+2014/08/21 06:39:12 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'testingdb.log' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `log`.
+in C:\xampp\htdocs\TestingManagement\TestingManagement\protected\controllers\LogController.php (151)
+in C:\xampp\htdocs\TestingManagement\TestingManagement\index.php (13)
+2014/08/21 06:39:12 [error] [exception.CDbException] exception 'CDbException' with message 'The table "log" for active record class "Log" cannot be found in the database.' in C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php:2362
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Log))
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(79): CActiveRecord->getMetaData()
+#2 C:\xampp\htdocs\TestingManagement\TestingManagement\protected\controllers\LogController.php(151): CActiveRecord->__construct('search')
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): LogController->actionIndex()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('log')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\TestingManagement\TestingManagement\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/TestingManagement/TestingManagement/index.php?r=log
+---
+2014/08/21 06:39:16 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'testingdb.log' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `log`.
+in C:\xampp\htdocs\TestingManagement\TestingManagement\protected\controllers\LogController.php (151)
+in C:\xampp\htdocs\TestingManagement\TestingManagement\index.php (13)
+2014/08/21 06:39:16 [error] [exception.CDbException] exception 'CDbException' with message 'The table "log" for active record class "Log" cannot be found in the database.' in C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php:2362
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Log))
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(79): CActiveRecord->getMetaData()
+#2 C:\xampp\htdocs\TestingManagement\TestingManagement\protected\controllers\LogController.php(151): CActiveRecord->__construct('search')
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): LogController->actionIndex()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('log')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\TestingManagement\TestingManagement\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/TestingManagement/TestingManagement/index.php?r=log
+---
+2014/08/21 06:43:05 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'testingdb.log' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `log`.
+in C:\xampp\htdocs\TestingManagement\TestingManagement\protected\controllers\LogController.php (151)
+in C:\xampp\htdocs\TestingManagement\TestingManagement\index.php (13)
+2014/08/21 06:43:05 [error] [exception.CDbException] exception 'CDbException' with message 'The table "log" for active record class "Log" cannot be found in the database.' in C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php:2362
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Log))
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(79): CActiveRecord->getMetaData()
+#2 C:\xampp\htdocs\TestingManagement\TestingManagement\protected\controllers\LogController.php(151): CActiveRecord->__construct('search')
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): LogController->actionIndex()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('log')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\TestingManagement\TestingManagement\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/TestingManagement/TestingManagement/index.php?r=log
+---
+2014/08/21 06:43:13 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'testingdb.log' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `log`.
+in C:\xampp\htdocs\TestingManagement\TestingManagement\protected\controllers\LogController.php (151)
+in C:\xampp\htdocs\TestingManagement\TestingManagement\index.php (13)
+2014/08/21 06:43:13 [error] [exception.CDbException] exception 'CDbException' with message 'The table "log" for active record class "Log" cannot be found in the database.' in C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php:2362
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Log))
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(79): CActiveRecord->getMetaData()
+#2 C:\xampp\htdocs\TestingManagement\TestingManagement\protected\controllers\LogController.php(151): CActiveRecord->__construct('search')
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): LogController->actionIndex()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('log/index')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\TestingManagement\TestingManagement\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/TestingManagement/TestingManagement/index.php?r=log/index
+HTTP_REFERER=http://localhost/TestingManagement/TestingManagement/
+---
