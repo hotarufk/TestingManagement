@@ -60,10 +60,11 @@ System Rule: Logged in as 'admin'
 -Log, Index; Click on 'View' button: Redirected to View Log page (Success)
 -Log, Index; Click on 'Update' button: Redirected to View Log page. #Fixed: Redirected to proper Update Log page.
 -Log, Index; Click on 'Delete' button: Muncul Prompt untuk delete item. Yes -> Menghilangkan data setelah beberapa saat (Success)
--Log, View Log; Create Log: Error 400. Your request is invalid !ERROR: Kalau memang tidak bisa Create Log secara langsung mohon dihapus tombolnya.
+-Log, View Log; Create Log: Error 400. Your request is invalid. #Fixed: Changed button to create log from same test case. Works.
 -Log, View Log; Update Log: Redirect ke View Log. #Fixed: Properly redirected to Update Log
 -Log, View Log; Manage Log: Error 404. The system is unable to find the requested action "admin". #Fixed: Properly returning to Manage Log screen.
 -Log, View Log; Delete Log: Prompt untuk delete log. Yes -> Error 404. The system is unable to find the requested action "admin". #Fixed: Successful deletion.
--Log, Update Log; Error 404 when saving. #fixed
+-Log, Update Log; Saving: Error 404 when saving. #fixed
+-Log, Update Log; Create Log: Error 400 invalid request . !ERROR: Kalau tidak dipakai, dihapus saja.
 
 -Logout: (Success)
