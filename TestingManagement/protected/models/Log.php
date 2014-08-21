@@ -120,8 +120,8 @@ class Log extends CActiveRecord
         //ALgoritma
         if($this->logID=="" or $this->logID== NULL){ //data baru di create
 			Yii::trace("data logID nya kosong berarti kalo create logID nya masih belum ada saat ini");
-		}else
-		$isNew = false;
+		}else{
+		$isNew = false;}
 		
 			
 		//check apakah update atau create
@@ -129,14 +129,14 @@ class Log extends CActiveRecord
 		//buat kriteria pencarian nya
         //hitung jumlah Ndata yang di temukan, kalo lebih besar dari 0 maka false.
         $count =$this->countByAttributes(array(
-            'logID'=>$this->logID,
+            'Ndata'=>$this->Ndata,
             'TanggalTest'=>$this->TanggalTest
         ));
 
         $message = "hasil count : ".$count;
         $category = "date validator";
-        Yii::trace("hasil count : ".$count."  tanggal test, id    ".$this->TanggalTest."  , ".'2');
-        if ($isNew){
+        Yii::trace("hasil count : ".$count."  tanggal test, Ndata    ".$this->TanggalTest."  , ".$this->Ndata);
+        if ($isNew== true){
 			if($count<=0){
 				$message="valid";
 				$category="date debugging";
@@ -147,10 +147,10 @@ class Log extends CActiveRecord
                 Yii::trace($message);
 				$this->addError('TanggalTest', 'Keterangan Pada Tanggal Ini Telah Dibuat');
 			}	
-		}elseif(!$isNew){
+		}elseif($isNew == false){
 			//validasi apakah dia sama seperti sebelumnya atau bukan
 			$oldData = $this->findByPk($this->logID)->getAttribute('TanggalTest');
-			if($oldData!==$this->TanggalTest){ //ada yang berubah
+			if(strtotime($oldData)!==strtotime($this->TanggalTest)){ //ada yang berubah
 				if($count<=0){//check apakad perubahan nya kosong
 					Yii::trace("datanya  berubah ~ ");
 				}
