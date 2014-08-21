@@ -110,8 +110,16 @@ class DataController extends Controller
 	 */
 	public function actionDelete($id)
 	{
+		$logrelated = Log::model()->findAllByAttributes(array('Ndata'=>$this->loadModel($id)->dataID));
+		if(count($logrelated) > 0) {
+			echo "Sorry, but there are still related Log!";
+		}
+		else { 
+		//sebelum delete data , delete terlebih dahulu semua log yang berhubungan degan data tersebut
 		$this->loadModel($id)->delete();
-
+		}
+		
+		
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('index'));
