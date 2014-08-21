@@ -9,6 +9,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Update Log <?php echo $model->id; ?></h1>
+<h1>Update Log <?php echo $model->logID; ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model,'modelData'=>$modelData)); ?>

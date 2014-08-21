@@ -4,7 +4,7 @@
 
 
 $this->menu=array(
-	array('label'=>'Manage Log', 'url'=>array('admin')),
+	array('label'=>'Manage Log', 'url'=>array('index')),
 );
 ?>
 

@@ -30,11 +30,11 @@ class LogController extends Controller
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('index','view','viewAll'),
-				'users'=>array('@'),
+				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('create','update'),
-				'users'=>array('@'),
+				'users'=>array('*'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('delete'),
@@ -120,7 +120,6 @@ class LogController extends Controller
 		$this->render('update',array(
 			'model'=>$model,
 			'modelData'=>$modelData,
-	        $this->redirect(array('view','id'=>$model->logID))
 		));
 	}
 
