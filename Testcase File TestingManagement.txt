@@ -1,0 +1,66 @@
+Testing Management Test:
+
+General Rule: 
+-Successes are enclosed by '()' mark. 
+-Success with note are marked with '*' mark. 
+-Error are marked with '!' mark.
+-Fixed are marked with '#' mark.
+
+System Rule: Logged in as 'admin'
+
+-Opening Site for the first time: Manage Data Page shown. (Success)
+-Data, Manage Data; Search for a specific ID: searched '1', success (Success)
+-Data, Manage Data; Search for a specific no: searched '13', success (Success)
+-Data, Manage Data; Search for a specific Stream: (Success)
+-Data, Manage Data; Search for a specific Scenario: (Success)
+-Data, Manage Data; Search for a specific Test Case: (Success)
+-Data, Manage Data; Search for a specific Tester Wipro: (Success)
+-Data, Manage Data; Search for a specific Tester Tsel: (Success)
+-Data, Manage Data; Search for a specific Cycle: (Success)
+-Data, Manage Data; Search for a specific Planned Start Date: (Success)
+-Data, Manage Data; Search for a specific Planned End Date: (Success)
+-Data, Manage Data; Search for a specific Status: (Success)
+-Data, Manage Data; Search for a specific Remark: (Success)
+-Data, Manage Data; Search for a specific Defect: (Success)
+-Data, Manage Data; Search for a specific Final Status: (Success)
+-Data, Manage Data; Click at 'View' button: Redirected to View Data (Success)
+-Data, Manage Data; Click at 'Update' button: Redirected to Update Data (Success)
+-Data, Manage Data; Click at 'Delete' button: Data deleted without notifications (Success)
+
+-Data, Create Data; 'no' field not filled: no cannot be blank (Success)
+-Data, Create Data; 'Stream' field not filled: Stream cannot be blank (Success)
+-Data, Create Data; 'Scenario' field not filled: Scenario cannot be blank (Success)
+-Data, Create Data; 'Test Case' field not filled: Test Case cannot be blank (Success)
+-Data, Create Data; 'Tester Wipro' field not filled: Tester Wipro cannot be blank (Success)
+-Data, Create Data; 'Tester Tsel' field not filled:Tester Tsel cannot be blank (Success)
+-Data, Create Data; 'Cycle' field not filled: Cycle cannot be blank (Success)
+-Data, Create Data; 'Planned Start Date' field not filled: Planned Start Date cannot be blank (Success)
+-Data, Create Data; 'Planned End Date' field not filled: Planned End Date cannot be blank.
+					Planned Start Date invaldataID, must be >= than Planned End Date *Success with note
+-Data, Create Data; 'Status' field not filled: Status cannot be blank. (Success)
+-Data, Create Data; 'Remark' field not filled: Set as 'Not set' (Success)
+-Data, Create Data; 'Defect' field not filled: Set as 'Not set'  (Success)
+-Data, Create Data; 'Final Status' field not filled:
+-Data, Create Data; 'Planned End Date' same with 'Planned Start Date': Can be done (Success)
+
+-Data, Create Data; 'Planned End Date' before 'Planned Start Date': Planned Start Date invaldataID, must be >= than Planned End Date *Success with note: Start Date >= Planned End Date? bukan =< ?
+
+-Date, Create Data; Same Test Case with another data: Data dengan STream,SCenario, dan TestCase ini sudah ada *Success with note: TULISAN ADA STREAM, SCENARIO, DAN TESTCASE. HANYA TESTCASE SAMA YANG DIPERIKSA.
+
+-Data, View Data; Delete Data: Error 404. The system is unable to find the requested action "admin". !ERROR: Test selanjutnya menunjukkan kalau data yang dihapus hilang, tetapi disini memunculkan error.
+-Data, View Data; Delete Data->Back: Error 404. The requested page does not exist. !ERROR: Page sebelumnya error 404 juga.
+
+-Log, Index; Search Stream: (Success)
+-Log, Index; Search Scenario: (Success)
+-Log, Index; Search Test Case: (Success)
+-Log, Index; Search Tanggal test: (Success)
+-Log, Index; Search Keterangan: (Success)
+-Log, Index; Click on 'View' button: Redirected to View Log page (Success)
+-Log, Index; Click on 'Update' button: Redirected to View Log page. !ERROR: Should be redirected to Update Log page.
+-Log, Index; Click on 'Delete' button: Muncul Prompt untuk delete item. Yes -> Menghilangkan data setelah beberapa saat (Success)
+-Log, View Log; Create Log: Error 400. Your request is invalid !ERROR: Kalau memang tidak bisa Create Log secara langsung mohon dihapus tombolnya.
+-Log, View Log; Update Log: Redirect ke View Log. !ERROR: Kalau tidak bisa Update Log mohon dihapus tombolnya.
+-Log, View Log; Manage Log: Error 404. The system is unable to find the requested action "admin". !ERROR.
+-Log, View Log; Delete Log: Prompt untuk delete log. Yes -> Error 404. The system is unable to find the requested action "admin". !ERROR
+
+-Logout: (Success)
