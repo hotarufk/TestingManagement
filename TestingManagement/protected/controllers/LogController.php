@@ -105,6 +105,7 @@ class LogController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
+		$model->scenario='update';
         $modelData=Data::model()->findByPk($model->Ndata);
 
 		// Uncomment the following line if AJAX validation is needed

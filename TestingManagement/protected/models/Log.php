@@ -119,10 +119,10 @@ class Log extends CActiveRecord
         $isNew = true;
         //ALgoritma
         if($this->logID=="" or $this->logID== NULL){ //data baru di create
-			Yii::trace("data logID nya kosong berarti kalo create logID nya masih belum ada saat ini")
-		}else{
+			Yii::trace("data logID nya kosong berarti kalo create logID nya masih belum ada saat ini");
+		}else
 		$isNew = false;
-		}
+		
 			
 		//check apakah update atau create
 			
@@ -149,10 +149,10 @@ class Log extends CActiveRecord
 			}	
 		}elseif(!$isNew){
 			//validasi apakah dia sama seperti sebelumnya atau bukan
-			$oldData = $this->findByPk($this->logID)->getAttribute();
-			if(oldData['TanggalTest']!==$this->TanggalTest){ //ada yang berubah
+			$oldData = $this->findByPk($this->logID)->getAttribute('TanggalTest');
+			if($oldData!==$this->TanggalTest){ //ada yang berubah
 				if($count<=0){//check apakad perubahan nya kosong
-					Yii::trace("datanya  berubah ~ ")
+					Yii::trace("datanya  berubah ~ ");
 				}
 				else{
 				Yii::trace("datanya udah ada sebelum nya :v :v :v");
