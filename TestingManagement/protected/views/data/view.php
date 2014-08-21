@@ -18,7 +18,13 @@ $this->menu=array(
 ?>
 
 <h1>View Data #<?php echo $model->dataID; ?></h1>
-
+<?php if(Yii::app()->user->hasFlash('deletemessage')): ?>
+ 
+<div class="flash-success">
+    <?php echo Yii::app()->user->getFlash('deletemessage'); ?>
+</div>
+ 
+<?php endif; ?>
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(

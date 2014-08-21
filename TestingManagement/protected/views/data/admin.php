@@ -23,7 +23,13 @@ $('.search-form form').submit(function(){
 ?>
 
 <h1>Manage Data</h1>
-
+<?php if(Yii::app()->user->hasFlash('deletemessage')): ?>
+ 
+<div class="flash-success">
+    <?php echo Yii::app()->user->getFlash('deletemessage'); ?>
+</div>
+ 
+<?php endif; ?>
 
 <?php $this->widget('bootstrap.widgets.TbGridView', array(
 	'type'=>'striped bordered condensed',

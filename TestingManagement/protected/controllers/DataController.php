@@ -112,7 +112,8 @@ class DataController extends Controller
 	{
 		$logrelated = Log::model()->findAllByAttributes(array('Ndata'=>$this->loadModel($id)->dataID));
 		if(count($logrelated) > 0) {
-			echo "Sorry, but there are still related Log!";
+			Yii::app()->user->setFlash('deletemessage','Sorry, but there are still related Log !');
+			//echo "Sorry, but there are still related Log!";
 		}
 		else { 
 		//sebelum delete data , delete terlebih dahulu semua log yang berhubungan degan data tersebut
