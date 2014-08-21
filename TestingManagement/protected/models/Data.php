@@ -137,7 +137,15 @@ class Data extends CActiveRecord
 				'Scenario'=>$this->Scenario,
 				'TestCase'=>$this->TestCase
 			));
+	//kamus Lokal
+        $isNew = true;
+        //ALgoritma
+        if($this->dataID=="" or $this->dataID== NULL){ //data baru di create
+			Yii::trace("data logID nya kosong berarti kalo create logID nya masih belum ada saat ini");
+		}else{
+		$isNew = false;}
 		
+	if($isNew){
 		if ($count <= 0 ){ //tidak ada data dengan kondisi sama kayak gini , asumsi bahwa search ini case insensitive -__-
 			$message="valid";
 			$category="data debugging";
@@ -147,7 +155,23 @@ class Data extends CActiveRecord
 			$category="data debugging";
 			Yii::trace($message);
 			$this->addError('TestCase', 'Data dengan Stream,SCenario, dan TestCase ini sudah ada');
-		}   	
+		}	
+	}elseif(!$isNew){
+		if($count<=0)
+			Yii::trace("data berubah dan slot nya kosong");
+		else{
+			$oldStream =  $this->findByPk($this->dataID)->getAttribute('Stream');
+			$oldScenario =  $this->findByPk($this->dataID)->getAttribute('Scenario');
+			$oldTestCase =  $this->findByPk($this->dataID)->getAttribute('TestCase');
+			if(($oldStream === $this->Stream) and($oldScenario === $this->Scenario) and ($oldTestCase === $this->TestCase))
+				Yii::trace("data tidak berubah");
+			else{
+				Yii::trace("data berubah tapi slot nya udah ke isi :v:V :v");
+				$this->addError('TestCase', 'Data dengan Stream,Scenario, dan TestCase ini sudah ada');
+			}
+		}
+	}
+   	
 
 	}
 	
