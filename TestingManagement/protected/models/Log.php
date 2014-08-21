@@ -21,6 +21,7 @@ class Log extends CActiveRecord
 	 public $LStream;
 	 public $LTestCase;
 	 public $LScenario;
+	 public $oldattribute;
 	public function tableName()
 	{
 		return 'log';
@@ -36,6 +37,7 @@ class Log extends CActiveRecord
 		return array(
 			array('Ndata, TanggalTest, Keterangan', 'required'),
 			array('Ndata', 'numerical', 'integerOnly'=>true),
+			array('TanggalTest','dateValidator','on'=>'create,update'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, Ndata, TanggalTest, Keterangan,LScenario,LStream,LTestCase', 'safe', 'on'=>'search'),
@@ -116,7 +118,14 @@ class Log extends CActiveRecord
         //kamus Lokal
         
         //ALgoritma
-        //buat kriteria pencarian nya
+        if($this->logID=="" or $this->logID== NULL){
+			Yii::trace("data logID nya kosong berarti kalo create logID nya masih belum ada saat ini")
+		
+		}
+			
+		//check apakah update atau create
+			
+		//buat kriteria pencarian nya
         //hitung jumlah Ndata yang di temukan, kalo lebih besar dari 0 maka false.
         $count =$this->countByAttributes(array(
             'logID'=>$this->logID,
