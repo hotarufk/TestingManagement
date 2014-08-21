@@ -46,6 +46,8 @@ System Rule: Logged in as 'admin'
 -Data, Create Data; 'Planned End Date' before 'Planned Start Date': Planned Start Date invaldataID, must be >= than Planned End Date *Success with note: Start Date >= Planned End Date? bukan =< ?
 
 -Date, Create Data; Same Test Case with another data: Data dengan STream,SCenario, dan TestCase ini sudah ada *Success with note: TULISAN ADA STREAM, SCENARIO, DAN TESTCASE. HANYA TESTCASE SAMA YANG DIPERIKSA.
+-Date, Create Data; All same data with previously existing data: Error tetap hanya di Test Case tanpa menyertakan Stream dan Scenario. *Success with note
+
 
 -Data, View Data; Delete Data: Error 404. The system is unable to find the requested action "admin". !ERROR: Test selanjutnya menunjukkan kalau data yang dihapus hilang, tetapi disini memunculkan error.
 -Data, View Data; Delete Data->Back: Error 404. The requested page does not exist. !ERROR: Page sebelumnya error 404 juga.
