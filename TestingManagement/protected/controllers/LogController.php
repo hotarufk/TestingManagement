@@ -114,7 +114,7 @@ class LogController extends Controller
 		{
 			$model->attributes=$_POST['Log'];
 			if($model->save())
-                $this->redirect(array('view','id'=>$model->Ndata));
+                $this->redirect(array('view','id'=>$model->logID));
 		}
 
 		$this->render('update',array(
