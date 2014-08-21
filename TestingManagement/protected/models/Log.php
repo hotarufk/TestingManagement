@@ -116,11 +116,12 @@ class Log extends CActiveRecord
 	
 	public function dateValidator($attribute,$params){
         //kamus Lokal
-        
+        $isNew = true;
         //ALgoritma
-        if($this->logID=="" or $this->logID== NULL){
+        if($this->logID=="" or $this->logID== NULL){ //data baru di create
 			Yii::trace("data logID nya kosong berarti kalo create logID nya masih belum ada saat ini")
-		
+		}else{
+		$isNew = false;
 		}
 			
 		//check apakah update atau create
@@ -135,16 +136,31 @@ class Log extends CActiveRecord
         $message = "hasil count : ".$count;
         $category = "date validator";
         Yii::trace("hasil count : ".$count."  tanggal test, id    ".$this->TanggalTest."  , ".'2');
-        if ($count <= 0 ){
-            $message="valid";
-            $category="date debugging";
-            Yii::trace($message);
-        }else{
+        if ($isNew){
+			if($count<=0){
+				$message="valid";
+				$category="date debugging";
+				Yii::trace($message);
+			}else{
                 $message="invalid";
                 $category="date debugging";
                 Yii::trace($message);
-            $this->addError('TanggalTest', 'Keterangan Pada Tanggal Ini Telah Dibuat');
-        }    
+				$this->addError('TanggalTest', 'Keterangan Pada Tanggal Ini Telah Dibuat');
+			}	
+		}elseif(!$isNew){
+			//validasi apakah dia sama seperti sebelumnya atau bukan
+			$oldData = $this->findByPk($this->logID)->getAttribute();
+			if(oldData['TanggalTest']!==$this->TanggalTest){ //ada yang berubah
+				if($count<=0){//check apakad perubahan nya kosong
+					Yii::trace("datanya  berubah ~ ")
+				}
+				else{
+				Yii::trace("datanya udah ada sebelum nya :v :v :v");
+				$this->addError('TanggalTest', 'Keterangan Pada Tanggal Ini Telah Dibuat');
+				}
+			}else
+				Yii::trace("datanya gak berubah :v :v :v YAY");
+		}
     
     }
 	
