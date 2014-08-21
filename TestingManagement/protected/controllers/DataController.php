@@ -113,17 +113,17 @@ class DataController extends Controller
 		$logrelated = Log::model()->findAllByAttributes(array('Ndata'=>$this->loadModel($id)->dataID));
 		if(count($logrelated) > 0) {
 			Yii::app()->user->setFlash('deletemessage','Sorry, but there are still related Log !');
+			$this->redirect(array(Yii::app()->request->requestUri));
 			//echo "Sorry, but there are still related Log!";
 		}
 		else { 
 		//sebelum delete data , delete terlebih dahulu semua log yang berhubungan degan data tersebut
 		$this->loadModel($id)->delete();
+			if(!isset($_GET['ajax']))
+				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('index'));
 		}
-		
-		
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('index'));
+
 	}
 
 	/**
