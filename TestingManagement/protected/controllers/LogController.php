@@ -85,8 +85,8 @@ class LogController extends Controller
 		if(isset($_POST['Log']))
 		{
 			$model->attributes=$_POST['Log'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->logID));
+			if($model->save()){}
+				//$this->redirect(array('view','id'=>$model->logID));
 
 		}
 
@@ -114,8 +114,8 @@ class LogController extends Controller
 		if(isset($_POST['Log']))
 		{
 			$model->attributes=$_POST['Log'];
-			if($model->save())
-                $this->redirect(array('view','id'=>$model->logID));
+			if($model->save()){}
+               // $this->redirect(array('view','id'=>$model->logID));
 		}
 
 		$this->render('update',array(
