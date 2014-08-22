@@ -8,21 +8,11 @@ $this->menu=array(
 	array('label'=>'Create Data', 'url'=>array('create')),
 );
 
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$('#data-grid').yiiGridView('update', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
+
 ?>
 
 <h1>Manage Data</h1>
+
 <?php if(Yii::app()->user->hasFlash('deletemessage')): ?>
  
 <div class="flash-success">
@@ -32,6 +22,7 @@ $('.search-form form').submit(function(){
 <?php endif; ?>
 
 <?php $this->widget('bootstrap.widgets.TbGridView', array(
+	
 	'type'=>'striped bordered condensed',
 	'id'=>'data-grid',
 	'dataProvider'=>$model->search(),
@@ -62,6 +53,15 @@ $('.search-form form').submit(function(){
 	
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
+			'template' => '{view}{update}',
 		),
 	),
 )); ?>
+
+<?php if(Yii::app()->user->hasFlash('deletemessage')): ?>
+ 
+<div class="flash-success">
+    <?php echo Yii::app()->user->getFlash('deletemessage'); ?>
+</div>
+ 
+<?php endif; ?>

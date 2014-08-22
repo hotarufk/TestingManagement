@@ -51,7 +51,7 @@ class DataController extends Controller
 	 */
 	public function actionView($id)
 	{
-	Yii::app()->user->setReturnUrl('data/view','id'=>$id);
+	Yii::app()->user->setReturnUrl('index.php?r=data/view&id='.$id);
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
@@ -114,7 +114,7 @@ class DataController extends Controller
 		$logrelated = Log::model()->findAllByAttributes(array('Ndata'=>$this->loadModel($id)->dataID));
 		if(count($logrelated) > 0) {
 			Yii::app()->user->setFlash('deletemessage','Sorry, but there are still related Log !');
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('index'));
+			$this->redirect(Yii::app()->user->returnUrl);
 			//echo "Sorry, but there are still related Log!";
 		}
 		else { 
@@ -143,7 +143,7 @@ class DataController extends Controller
 	 */
 	public function actionIndex()
 	{
-	Yii::app()->user->setReturnUrl('data/index');
+	Yii::app()->user->setReturnUrl('index.php?r=data/index');
 		$model=new Data('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Data']))

@@ -5,6 +5,7 @@ General Rule:
 -Success with note are marked with '*' mark. 
 -Error are marked with '!' mark.
 -Fixed are marked with '#' mark.
+-Debugging are marked with '?' mark.
 
 System Rule: Logged in as 'admin'
 
@@ -40,7 +41,7 @@ System Rule: Logged in as 'admin'
 -Data, Create Data; 'Status' field not filled: Status cannot be blank. (Success)
 -Data, Create Data; 'Remark' field not filled: Set as 'Not set' (Success)
 -Data, Create Data; 'Defect' field not filled: Set as 'Not set'  (Success)
--Data, Create Data; 'Final Status' field not filled:
+-Data, Create Data; 'Final Status' field not filled: Set as 'Not set' (Success)
 -Data, Create Data; 'Planned End Date' same with 'Planned Start Date': Can be done (Success)
 
 -Data, Create Data; 'Planned End Date' before 'Planned Start Date': Planned Start Date invaldataID, must be >= than Planned End Date *Success with note: Start Date >= Planned End Date? bukan =< ?
@@ -64,7 +65,7 @@ System Rule: Logged in as 'admin'
 -Log, View Log; Update Log: Redirect ke View Log. #Fixed: Properly redirected to Update Log
 -Log, View Log; Manage Log: Error 404. The system is unable to find the requested action "admin". #Fixed: Properly returning to Manage Log screen.
 -Log, View Log; Delete Log: Prompt untuk delete log. Yes -> Error 404. The system is unable to find the requested action "admin". #Fixed: Successful deletion.
--Log, Update Log; Saving: Error 404 when saving. #fixed
+-Log, Update Log; Saving: Error 404 when saving. #fixed. ?DEBUG: Right now still redirecting to Update page.
 -Log, Update Log; Create Log: Error 400 invalid request . !ERROR: Kalau tidak dipakai, dihapus saja.
 
 -Logout: (Success)
