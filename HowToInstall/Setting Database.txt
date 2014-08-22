@@ -1,0 +1,16 @@
+1.buka folder knowledgemanagement->knowledgemanagement->protected->config
+2.buka file main.php menggunakan file editor seperti notepad++ atau notepad
+3.pada file main.php cari application commponent , kemudian cari tulisan "// uncomment the following to use a MySQL database"
+4. Dibawah tulisan tersebut terdapat pengaturan menggunakan database menggunakan MySQL dengan konfigurasi sebagai berikut
+	> 'connectionString' => 'mysql:host=localhost;dbname=testingdb'
+		mysql:host , adalah alamat /address tempat database yang digunakan, apabila database disimpan di server yang sama dengan source code , maka host nya adalah localhost 
+		dbname , adalah nama dari database yang digunakan oleh website ini
+
+	>'username' -> username yang digunakan untuk membuka database yang digunakan
+	>'password' ->  password yang digunakn untuk membuka database yang diinginkan
+5.Didalam folder ini juga terdapat dump sql dari database yang dapat digunakan untuk membuat database yang diperlukan dengan nama knowledgdb.sql
+6.secara default id dan password dari website ini untuk admin adalah 
+
+		id : admin
+		password : admin
+7.Hanya Admin ang memiliki hak untuk melakukan delete terhadap data yang ada.
